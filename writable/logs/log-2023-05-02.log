@@ -1,0 +1,54 @@
+ERROR - 2023-05-02 19:35:50 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=2408 in C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 171)
+#1 C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'db_klinik', 3306, '', 0)
+#2 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\klinik\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\klinik\app\Models\ModelAuth.php(13): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\klinik\app\Controllers\Auth.php(53): App\Models\ModelAuth->login_petugas('frlakumani_')
+#7 C:\xampp\htdocs\klinik\system\CodeIgniter.php(904): App\Controllers\Auth->cek_login()
+#8 C:\xampp\htdocs\klinik\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\klinik\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\klinik\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'db_klinik', 3306, '', 0)
+#1 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\klinik\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\klinik\app\Models\ModelAuth.php(13): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\klinik\app\Controllers\Auth.php(53): App\Models\ModelAuth->login_petugas('frlakumani_')
+#6 C:\xampp\htdocs\klinik\system\CodeIgniter.php(904): App\Controllers\Auth->cek_login()
+#7 C:\xampp\htdocs\klinik\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\klinik\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\klinik\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\klinik\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\klinik\app\Models\ModelAuth.php(13): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\klinik\app\Controllers\Auth.php(53): App\Models\ModelAuth->login_petugas('frlakumani_')
+#5 C:\xampp\htdocs\klinik\system\CodeIgniter.php(904): App\Controllers\Auth->cek_login()
+#6 C:\xampp\htdocs\klinik\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\klinik\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\klinik\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-05-02 19:35:50 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_petugas`
+WHERE `username` = :username:', [...], false)
+ 3 APPPATH\Models\ModelAuth.php(13): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Auth.php(53): App\Models\ModelAuth->login_petugas('frlakumani_')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Auth->cek_login()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

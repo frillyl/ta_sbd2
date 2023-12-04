@@ -1,0 +1,70 @@
+CRITICAL - 2023-04-20 07:10:07 --> syntax error, unexpected token "if"
+in APPPATH\Config\Routes.php on line 60.
+ 1 SYSTEMPATH\CodeIgniter.php(406): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 2 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-20 20:41:32 --> Undefined array key "id_perawat"
+in APPPATH\Views\master\v_nakes.php on line 74.
+ 1 APPPATH\Views\master\v_nakes.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_perawat"', 'APPPATH\\Views\\master\\v_nakes.php', 74)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\master\\v_nakes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('master/v_nakes', [], true)
+ 5 APPPATH\Views\layout\v_content.php(4): view('master/v_nakes')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('layout/v_content', [], true)
+ 9 APPPATH\Views\layout\v_wrapper.php(6): view('layout/v_content')
+10 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Master.php(342): view('layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Master->index_nakes()
+15 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+16 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-04-20 20:50:30 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'db_klinik', 3306, '', 0)
+#1 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\klinik\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\klinik\app\Models\ModelNakes.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\klinik\app\Controllers\Master.php(340): App\Models\ModelNakes->allData()
+#6 C:\xampp\htdocs\klinik\system\CodeIgniter.php(904): App\Controllers\Master->index_nakes()
+#7 C:\xampp\htdocs\klinik\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+#8 C:\xampp\htdocs\klinik\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\klinik\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\klinik\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\klinik\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\klinik\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\klinik\app\Models\ModelNakes.php(18): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\klinik\app\Controllers\Master.php(340): App\Models\ModelNakes->allData()
+#5 C:\xampp\htdocs\klinik\system\CodeIgniter.php(904): App\Controllers\Master->index_nakes()
+#6 C:\xampp\htdocs\klinik\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+#7 C:\xampp\htdocs\klinik\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\klinik\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-04-20 20:50:30 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_nakes`
+ORDER BY `nama` ASC', [], false)
+ 3 APPPATH\Models\ModelNakes.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Master.php(340): App\Models\ModelNakes->allData()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Master->index_nakes()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-20 23:46:03 --> Undefined property: App\Controllers\Master::$ModelPasien
+in APPPATH\Controllers\Master.php on line 656.
+ 1 APPPATH\Controllers\Master.php(656): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Master::$ModelPasien', 'APPPATH\\Controllers\\Master.php', 656)
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Master->index_pasien()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
